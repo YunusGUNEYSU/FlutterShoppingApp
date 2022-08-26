@@ -43,7 +43,7 @@ class HomeService extends IHomeService {
      if (response.statusCode==HttpStatus.ok) {
       final categoriesJson=response.data;
        if(categoriesJson is List<String>){
-        return categoriesJson;
+        return categoriesJson.map((e) => e).toList();
        }
        return null;
      }
